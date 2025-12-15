@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Break Into Data - Career Mentorship</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#fefce8',
+                100: '#fff7ed', // Cream/Beige background
+                500: '#f97316', // Orange Accent
+                600: '#ea580c',
+                900: '#1e3a8a', // Deep Blue
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Calendly -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+      body {
+        font-family: 'Inter', 'Noto Sans SC', sans-serif;
+      }
+      .calendly-modal-open {
+        overflow: hidden;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.3",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.561.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.3/"
+  }
+}
+</script>
+</head>
+  <body class="bg-brand-100 text-slate-800 antialiased relative">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 py-5">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900">Break Into Data</span>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <button 
+            onclick="openModal()"
+            class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-transform transform hover:scale-105"
+          >
+            Book a Call
+          </button>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button class="md:hidden text-slate-900" onclick="toggleMobileMenu()">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg p-6 flex-col gap-4 border-t">
+        <button 
+          onclick="openModal(); toggleMobileMenu()"
+          class="bg-slate-900 text-white w-full py-3 rounded-lg font-bold"
+        >
+          Book a Call
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/4 w-[800px] h-[800px] bg-blue-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+        <div class="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/4 w-[600px] h-[600px] bg-orange-100 rounded-full blur-3xl opacity-50 -z-10"></div>
+
+        <div class="container mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            
+            <!-- Text Content -->
+            <div class="flex-1 text-center lg:text-left">
+              <div class="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+                </span>
+                New: Mentorship Program 2024
+              </div>
+
+              <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 leading-[1.15] mb-6">
+                Land Your Data Analyst <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Dream Job.</span> <br />
+                <span class="block text-3xl md:text-4xl lg:text-5xl mt-2 text-slate-700 font-medium">
+                  Your Personal Career Mentor in the AI Era.
+                </span>
+              </h1>
+              
+              <p class="text-lg md:text-xl text-slate-600 mb-2 font-medium">
+                从数据分析新手到成功入职。你AI时代的专属求职导师。
+              </p>
+              
+              <p class="text-base md:text-lg text-slate-500 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Don't just learn data. Get hired. Our mentorship program guide you from skills to job offer, with personalized support every step. <br />
+                <span class="text-slate-400 text-sm">别只是学数据。拿下offer。我们的陪跑计划从技能到入职，全程个性化指导。</span>
+              </p>
+
+              <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                <button 
+                  onclick="openModal()"
+                  class="w-full sm:w-auto px-8 py-4 bg-slate-900 text-white text-lg font-bold rounded-full hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+                >
+                  Start Your Mentorship Journey <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </button>
+                <span class="text-sm font-medium text-slate-500">
+                  开启你的陪跑之旅
+                </span>
+              </div>
+
+              <!-- Trust Badges -->
+              <div class="flex flex-wrap justify-center lg:justify-start gap-4 md:gap-8 text-sm font-medium text-slate-600">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                  Mentors from FAANG
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                  High Interview Success Rate
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i>
+                  Resume Optimization
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="flex-1 relative w-full max-w-lg lg:max-w-none">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/50">
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Mentor and Mentee collaborating on data project" 
+                  class="w-full h-auto object-cover"
+                />
+                <!-- Floating Overlay Card -->
+                <div class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100 flex items-center gap-4">
+                  <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p class="font-bold text-slate-800">Offer Received!</p>
+                    <p class="text-xs text-slate-500">Data Analyst @ Tech Corp</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission Section -->
+      <section id="mission" class="bg-[#FFF8F3] py-20 border-y border-orange-100/50">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+          <h2 class="text-sm font-bold tracking-widest text-orange-600 uppercase mb-4">
+            Our Mission — 我们的使命
+          </h2>
+          <p class="text-2xl md:text-3xl lg:text-4xl font-serif text-slate-800 leading-relaxed font-medium">
+            "Break into Data empowers real people to transform their careers through dedicated, personalized mentorship, navigating the path to their first Data Analyst role."
+          </p>
+          <div class="mt-6 w-24 h-1 bg-orange-400 mx-auto rounded-full"></div>
+          <p class="mt-6 text-slate-600 text-lg">
+            Break into Data 致力于通过敬业、个性化的陪跑指导，赋能普通人成功转型，为你指引通往第一份数据分析师工作的路径。
+          </p>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Why Choose Our Job-Seeking Mentorship?
+            </h2>
+            <p class="text-xl text-slate-500">
+              为什么选择我们的求职陪跑？
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+            <!-- Feature 1 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors duration-300">
+              <div class="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mb-6 text-yellow-600">
+                <i data-lucide="handshake" class="w-10 h-10"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Personalized Career Roadmap
+              </h3>
+              <p class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-wide">
+                定制化职业路线图
+              </p>
+              <p class="text-slate-600 leading-relaxed">
+                No cookie-cutter plans. We build a strategy based on your background and goals.
+                <br/>
+                <span class="text-slate-500 text-sm mt-2 block">
+                  拒绝千篇一律。我们根据你的背景和目标量身定制求职策略。
+                </span>
+              </p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors duration-300">
+              <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600">
+                <i data-lucide="bot" class="w-10 h-10"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                AI-Enhanced Interview Prep
+              </h3>
+              <p class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-wide">
+                AI辅助面试准备
+              </p>
+              <p class="text-slate-600 leading-relaxed">
+                Master technical and behavioral interviews with our mentors and AI-driven practice tools.
+                <br/>
+                <span class="text-slate-500 text-sm mt-2 block">
+                  在导师和AI工具的帮助下，精通技术面和行为面。
+                </span>
+              </p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="flex flex-col items-center text-center p-6 rounded-2xl hover:bg-slate-50 transition-colors duration-300">
+              <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mb-6 text-pink-600">
+                <i data-lucide="briefcase" class="w-10 h-10"></i>
+              </div>
+              <h3 class="text-xl font-bold text-slate-900 mb-2">
+                Job-Ready Portfolio Guidance
+              </h3>
+              <p class="text-sm font-bold text-slate-400 mb-4 uppercase tracking-wide">
+                求职级作品集指导
+              </p>
+              <p class="text-slate-600 leading-relaxed">
+                Build a portfolio that gets noticed by recruiters, not just pass a class.
+                <br/>
+                <span class="text-slate-500 text-sm mt-2 block">
+                  打造能让招聘官眼前一亮的作品集，而不仅仅是完成课程。
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="py-24 bg-brand-50">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+              B
+            </div>
+            <h2 class="text-3xl font-bold text-slate-900">Break Into Data</h2>
+            <div class="flex items-center justify-center gap-2 mt-2">
+              <span class="text-2xl font-bold text-orange-500">4.9</span>
+              <div class="flex text-orange-400 gap-1">
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+                <i data-lucide="star" class="w-5 h-5 fill-current"></i>
+              </div>
+            </div>
+            <p class="text-slate-500 text-sm mt-1">Based on 30+ Google reviews</p>
+            <h3 class="text-2xl font-bold text-slate-800 mt-8">Success Stories from Our Mentees (学员成功案例)</h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Testimonial Items -->
+            <!-- Item 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">D</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">David N.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">1 day ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"My mentor's advice on my resume was game-changing. I went from zero interviews to 3 in a week."</p>
+              <p class="text-slate-400 text-xs italic">导师对我简历的建议是颠覆性的。我从零面试到一周拿了3个面试。</p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">S</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Sophia P.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">3 days ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"The mock interviews helped me secure my offer at a Fintech startup. The AI tool for practice was super helpful."</p>
+              <p class="text-slate-400 text-xs italic">模拟面试帮助我拿下一家金融科技初创公司的offer。AI练习工具非常有帮助。</p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">S</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Sarah M.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">5 days ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"Coming from HR, I was scared of the technical side. The personalized roadmap made it manageable."</p>
+              <p class="text-slate-400 text-xs italic">我是做HR的，完全是技术小白。个性化的路线图让转型变得可控。</p>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">L</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Leo Q.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">1 week ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"Worth every penny compared to generic courses. The negotiation support increased my starting salary by 15%."</p>
+              <p class="text-slate-400 text-xs italic">比起通用课程，这完全物超所值。薪资谈判支持让我的起薪提高了15%。</p>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">F</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Fiona W.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">2 weeks ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"The portfolio guidance was specific to my target industry. It really impressed the hiring manager."</p>
+              <p class="text-slate-400 text-xs italic">作品集指导针对了我的目标行业。这真的让招聘经理印象深刻。</p>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">K</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Kevin Z.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">2 weeks ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"I felt lost self-studying. The mentorship gave me structure and confidence."</p>
+              <p class="text-slate-400 text-xs italic">自学让我感到迷茫。陪跑给了我结构和信心。</p>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">J</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Jason L.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">3 weeks ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"I didn't know how to translate my marketing background into data. The mentorship bridged that gap perfectly."</p>
+              <p class="text-slate-400 text-xs italic">我不知道如何将我的营销背景转化为数据能力。陪跑完美地填补了这个空白。</p>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">A</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Amanda C.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">1 month ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"Fresh out of college, I had no direction. My mentor helped me land a job at a top consulting firm."</p>
+              <p class="text-slate-400 text-xs italic">刚大学毕业，我没有方向。我的导师帮我拿到了一家顶级咨询公司的offer。</p>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center text-blue-700 font-bold">R</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Ryan K.</h4>
+                  <div class="flex items-center gap-2">
+                    <div class="flex text-orange-400 gap-0.5">
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                      <i data-lucide="star" class="w-3 h-3 fill-current"></i>
+                    </div>
+                    <span class="text-xs text-slate-400">1 month ago</span>
+                  </div>
+                </div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5 ml-auto opacity-50" />
+              </div>
+              <p class="text-slate-600 text-sm mb-3">"The salary negotiation tips alone paid for the program. I got a 20% higher offer than expected."</p>
+              <p class="text-slate-400 text-xs italic">光是薪资谈判的技巧就值回了票价。我拿到的offer比预期高了20%。</p>
+            </div>
+          </div>
+          
+          <div class="text-center mt-12">
+             <button 
+               onclick="openModal()"
+               class="text-slate-600 font-semibold hover:text-orange-600 flex items-center gap-2 mx-auto transition-colors"
+             >
+               Start your success story today <i data-lucide="arrow-right" class="w-4 h-4"></i>
+             </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mentorship Programs Section -->
+      <section id="programs" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+              Choose Your <span class="text-orange-500">Path to Success</span>
+            </h2>
+            <p class="text-xl text-slate-500">
+              选择适合你的成长路径
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            
+            <!-- Card 1: AI + Data Analytics Course (Skill Focus) -->
+            <div class="group rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-white flex flex-col h-full transform transition-all hover:-translate-y-1 hover:shadow-2xl">
+              <div class="h-56 overflow-hidden relative bg-slate-900">
+                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900 to-slate-800 opacity-90 z-10"></div>
+                 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Analytics Course" class="w-full h-full object-cover opacity-40 mix-blend-overlay absolute top-0 left-0" />
+                 <div class="absolute inset-0 z-20 flex flex-col justify-center px-8">
+                   <div class="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-bold rounded-full w-fit mb-3 border border-blue-500/30">
+                     Skill Builder
+                   </div>
+                   <h3 class="text-3xl font-bold text-white mb-2">
+                     AI + Data Analytics Bootcamp
+                   </h3>
+                   <p class="text-slate-300 text-sm font-medium uppercase tracking-wide">
+                     AI + 数据分析全栈特训营
+                   </p>
+                 </div>
+              </div>
+              
+              <div class="p-8 flex-grow flex flex-col">
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                  A comprehensive 6-module curriculum designed to take you from beginner to portfolio-ready professional. Master the tools companies use.
+                  <br/>
+                  <span class="text-slate-500 text-sm">从零基础到项目实战的6大模块全方位课程。掌握企业核心数据技能。</span>
+                </p>
+
+                <!-- Curriculum Modules -->
+                <div class="space-y-3 mb-8 flex-grow">
+                  <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="bg-green-100 p-2 rounded text-green-700 mt-1">
+                      <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-800 text-sm">Module 1-2: Excel Core & AI Automation</h4>
+                      <p class="text-xs text-slate-500">Excel 初级 + 中级 (Power Query + AI 副驾)</p>
+                    </div>
+                  </div>
+                  
+                  <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="bg-blue-100 p-2 rounded text-blue-700 mt-1">
+                      <i data-lucide="database" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-800 text-sm">Module 3-4: SQL for Business Analysis</h4>
+                      <p class="text-xs text-slate-500">SQL 入门 + 中级 (Window Functions + AI 优化)</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="bg-yellow-100 p-2 rounded text-yellow-700 mt-1">
+                      <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-800 text-sm">Module 5: Power BI Visualization</h4>
+                      <p class="text-xs text-slate-500">建模 + 可视化 + AI 叙事</p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 p-3 rounded-lg bg-slate-50 border border-slate-100">
+                    <div class="bg-purple-100 p-2 rounded text-purple-700 mt-1">
+                      <i data-lucide="code" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-slate-800 text-sm">Module 6: Integrated Capstone Project</h4>
+                      <p class="text-xs text-slate-500">综合项目 (全栈 Excel + SQL + PBI + AI)</p>
+                    </div>
+                  </div>
+
+                   <!-- Light Job Support -->
+                   <div class="mt-4 pt-4 border-t border-dashed border-slate-200">
+                      <div class="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                        <span class="w-2 h-2 rounded-full bg-orange-500"></span>
+                        Plus: Basic Career Support (Bonus)
+                      </div>
+                      <p class="text-xs text-slate-500 pl-4 mt-1">Includes Resume Formatting & Portfolio Review</p>
+                   </div>
+                </div>
+
+                <button 
+                  onclick="openModal()"
+                  class="w-full py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-slate-800 transition-colors shadow-lg hover:shadow-slate-900/20"
+                >
+                  Book Consultation (咨询课程)
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: Career Mentorship (Job Search Focus) -->
+            <div class="group rounded-3xl overflow-hidden border-2 border-orange-500/20 shadow-xl bg-white flex flex-col h-full transform transition-all hover:-translate-y-1 hover:shadow-2xl relative">
+               <div class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-xl z-30">
+                  Recommended
+               </div>
+               <div class="h-56 overflow-hidden relative bg-orange-900">
+                 <div class="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-90 z-10"></div>
+                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Career Mentorship" class="w-full h-full object-cover opacity-40 mix-blend-overlay absolute top-0 left-0" />
+                 <div class="absolute inset-0 z-20 flex flex-col justify-center px-8">
+                   <div class="inline-block px-3 py-1 bg-white/20 text-white text-xs font-bold rounded-full w-fit mb-3 border border-white/30">
+                     Career Accelerator
+                   </div>
+                   <h3 class="text-3xl font-bold text-white mb-2">
+                     Elite Job-Seeking Mentorship
+                   </h3>
+                   <p class="text-white/90 text-sm font-medium uppercase tracking-wide">
+                     求职陪跑精英计划
+                   </p>
+                 </div>
+              </div>
+
+              <div class="p-8 flex-grow flex flex-col">
+                <p class="text-slate-600 mb-6 leading-relaxed">
+                  Purely focused on getting you hired. From personal branding to salary negotiation, we guide you through every step of the job hunt.
+                  <br/>
+                  <span class="text-slate-500 text-sm">专注于帮你拿下Offer。从个人品牌到薪资谈判，全方位求职护航。</span>
+                </p>
+                
+                <ul class="space-y-4 mb-8 flex-grow">
+                  <li class="flex items-start gap-4 p-3 hover:bg-orange-50 rounded-lg transition-colors group/li">
+                    <div class="mt-1 bg-orange-100 p-1.5 rounded-full text-orange-600 group-hover/li:bg-orange-500 group-hover/li:text-white transition-colors">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-bold text-sm">Personal Branding Strategy</span>
+                        <span class="block text-slate-500 text-xs mt-0.5">个人品牌策略 (LinkedIn/Github)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4 p-3 hover:bg-orange-50 rounded-lg transition-colors group/li">
+                    <div class="mt-1 bg-orange-100 p-1.5 rounded-full text-orange-600 group-hover/li:bg-orange-500 group-hover/li:text-white transition-colors">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-bold text-sm">Resume & Cover Letter Optimization</span>
+                        <span class="block text-slate-500 text-xs mt-0.5">简历与求职信深度优化</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4 p-3 hover:bg-orange-50 rounded-lg transition-colors group/li">
+                    <div class="mt-1 bg-orange-100 p-1.5 rounded-full text-orange-600 group-hover/li:bg-orange-500 group-hover/li:text-white transition-colors">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-bold text-sm">Mock Interviews (Behavioral & Tech)</span>
+                        <span class="block text-slate-500 text-xs mt-0.5">模拟面试 (行为 + 技术 + AI辅助)</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4 p-3 hover:bg-orange-50 rounded-lg transition-colors group/li">
+                    <div class="mt-1 bg-orange-100 p-1.5 rounded-full text-orange-600 group-hover/li:bg-orange-500 group-hover/li:text-white transition-colors">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-bold text-sm">Networking & Referral Strategy</span>
+                        <span class="block text-slate-500 text-xs mt-0.5">人脉建立与内推策略</span>
+                    </div>
+                  </li>
+                  <li class="flex items-start gap-4 p-3 hover:bg-orange-50 rounded-lg transition-colors group/li">
+                    <div class="mt-1 bg-orange-100 p-1.5 rounded-full text-orange-600 group-hover/li:bg-orange-500 group-hover/li:text-white transition-colors">
+                        <i data-lucide="check" class="w-4 h-4"></i>
+                    </div>
+                    <div>
+                        <span class="block text-slate-900 font-bold text-sm">Salary Negotiation & Offer Review</span>
+                        <span class="block text-slate-500 text-xs mt-0.5">薪资谈判与Offer审核</span>
+                    </div>
+                  </li>
+                </ul>
+
+                <button 
+                  onclick="openModal()"
+                  class="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-colors shadow-lg hover:shadow-orange-500/20"
+                >
+                  Apply for Mentorship (申请陪跑)
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Newsletter Section -->
+      <section class="bg-brand-900 py-20 relative overflow-hidden">
+        <!-- Decorative circle -->
+        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white/10 rounded-full translate-y-1/2 translate-x-1/2"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">
+            Join Our Community
+          </h2>
+          <p class="text-blue-100 text-lg mb-8">
+            加入我们的社区
+          </p>
+          
+          <p class="text-blue-200 mb-8 max-w-2xl mx-auto">
+            Get free career tips, interview insights, and mentorship program updates.
+            <br/>
+            <span class="text-sm opacity-80">获取免费的职业建议、面试见解和陪跑计划更新。</span>
+          </p>
+
+          <form class="max-w-lg mx-auto flex flex-col sm:flex-row gap-4" onsubmit="handleSubscribe(event)">
+            <input 
+              type="email" 
+              id="newsletter-email"
+              placeholder="Enter your email address" 
+              class="flex-grow px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-blue-300 focus:outline-none focus:ring-2 focus:ring-orange-500 backdrop-blur-sm"
+              required
+            />
+            <button type="submit" class="px-8 py-4 bg-slate-800 text-white font-bold rounded-full hover:bg-black transition-colors border border-slate-700">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 border-t border-white/10 py-8">
+      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-blue-300 text-sm">
+        <div class="mb-4 md:mb-0">
+          &copy; <span id="year"></span> Break Into Data. All rights reserved.
+        </div>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">BreakIntoData.ca</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition-colors">Legal</a>
+          <a href="#" class="hover:text-white transition-colors">Terms and conditions</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div id="calendly-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6">
+      <div 
+        class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity" 
+        onclick="closeModal()"
+      ></div>
+      <div class="relative bg-white w-full max-w-4xl h-[85vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in duration-200">
+        <div class="flex justify-between items-center p-4 border-b">
+          <h3 class="text-lg font-bold text-slate-800">Book Your Career Strategy Call</h3>
+          <button 
+            onclick="closeModal()"
+            class="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-500 hover:text-slate-800"
+          >
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="flex-grow bg-slate-50 relative">
+          <div 
+            class="calendly-inline-widget w-full h-full" 
+            data-url="https://calendly.com/breakintodata-ca/30min" 
+            style="min-width: 320px; height: 100%" 
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Set current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile Menu Logic
+      const mobileMenu = document.getElementById('mobile-menu');
+      function toggleMobileMenu() {
+        mobileMenu.classList.toggle('hidden');
+        mobileMenu.classList.toggle('flex');
+      }
+
+      // Sticky Header Logic
+      const header = document.getElementById('main-header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) {
+          header.classList.add('bg-white', 'shadow-md', 'py-3');
+          header.classList.remove('py-5', 'bg-transparent');
+        } else {
+          header.classList.remove('bg-white', 'shadow-md', 'py-3');
+          header.classList.add('py-5', 'bg-transparent');
+        }
+      });
+
+      // Modal Logic
+      const modal = document.getElementById('calendly-modal');
+      function openModal() {
+        modal.classList.remove('hidden');
+        document.body.classList.add('calendly-modal-open');
+      }
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.classList.remove('calendly-modal-open');
+      }
+
+      // Newsletter Logic
+      function handleSubscribe(e) {
+        e.preventDefault();
+        const email = document.getElementById('newsletter-email').value;
+        const subject = encodeURIComponent("Newsletter Subscription");
+        const body = encodeURIComponent(`Hi, I would like to subscribe to the newsletter.\n\nMy email is: ${email}`);
+        window.location.href = `mailto:breakintodata.ca@gmail.com?subject=${subject}&body=${body}`;
+      }
+    </script>
+  </body>
+</html>
