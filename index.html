@@ -39,16 +39,7 @@
         overflow: hidden;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://aistudiocdn.com/react@^19.2.3",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.561.0",
-    "react/": "https://aistudiocdn.com/react@^19.2.3/"
-  }
-}
-</script>
-</head>
+  </head>
   <body class="bg-brand-100 text-slate-800 antialiased relative">
     
     <!-- Header -->
@@ -821,9 +812,27 @@
       function handleSubscribe(e) {
         e.preventDefault();
         const email = document.getElementById('newsletter-email').value;
+        if (!email) return;
+
         const subject = encodeURIComponent("Newsletter Subscription");
         const body = encodeURIComponent(`Hi, I would like to subscribe to the newsletter.\n\nMy email is: ${email}`);
-        window.location.href = `mailto:breakintodata.ca@gmail.com?subject=${subject}&body=${body}`;
+        
+        // Provide visual feedback
+        const btn = e.target.querySelector('button');
+        const originalText = btn.innerText;
+        btn.innerText = 'Opening Email Client...';
+        btn.disabled = true;
+
+        setTimeout(() => {
+           window.location.href = `mailto:breakintodata.ca@gmail.com?subject=${subject}&body=${body}`;
+           
+           // Reset UI and show alert
+           setTimeout(() => {
+               btn.innerText = originalText;
+               btn.disabled = false;
+               alert("Thanks! Your default email client is opening. Please click 'Send' to complete your subscription.");
+           }, 1000);
+        }, 500);
       }
     </script>
   </body>
