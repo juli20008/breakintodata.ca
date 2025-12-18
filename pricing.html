@@ -35,6 +35,11 @@
       body {
         font-family: 'Inter', 'Noto Sans SC', sans-serif;
       }
+      .comparison-row:nth-child(even) {
+        background-color: rgba(248, 250, 252, 0.8);
+      }
+      .check-icon { color: #10b981; }
+      .x-icon { color: #94a3b8; }
     </style>
   </head>
   <body class="bg-brand-100 text-slate-800 antialiased relative">
@@ -82,103 +87,154 @@
     <main class="pt-32 pb-24">
       <div class="container mx-auto px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Invest in Your Career</h1>
-          <p class="text-xl text-slate-600 font-medium">为你的职业生涯投资 — 透明、公平的价格体系</p>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Choose Your Path</h1>
+          <p class="text-xl text-slate-600 font-medium">系统化技术学习 vs 全方位职业起飞</p>
         </div>
 
-        <!-- Main Programs -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          <!-- Card 1 -->
+        <!-- Main Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-20 items-stretch">
+          <!-- Card 1: Live Data Bootcamp -->
           <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all group">
-            <div class="p-8 border-b border-slate-100 bg-slate-900 text-white">
-              <h3 class="text-2xl font-bold mb-1">AI + Data Analytics Bootcamp</h3>
-              <p class="text-blue-300 text-sm font-medium uppercase">AI + 数据分析全栈特训营</p>
-              <div class="mt-6 flex items-baseline">
-                <span class="text-5xl font-bold">$3500</span>
-                <span class="ml-2 text-slate-400 font-medium">/ Program</span>
+            <div class="p-8 border-b border-slate-100 bg-[#1e293b] text-white">
+              <div class="inline-block px-3 py-1 bg-blue-500/20 text-blue-300 text-[10px] font-bold rounded-full w-fit mb-4 uppercase tracking-widest border border-blue-500/30">Lecturer-Led</div>
+              <h3 class="text-3xl font-bold mb-1">Live Data Bootcamp</h3>
+              <p class="text-blue-300 text-sm font-medium uppercase tracking-wide">AI + 数据分析 6周直播班</p>
+              <div class="mt-8 flex items-baseline">
+                <span class="text-5xl font-bold">$1,999</span>
+                <span class="ml-2 text-slate-400 font-medium uppercase tracking-tighter">Per Cohort</span>
               </div>
             </div>
-            <div class="p-8 flex-grow">
-              <ul class="space-y-4 mb-10">
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> 6 Comprehensive Modules</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> AI-Integrated Curriculum</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Hands-on Capstone Projects</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Portfolio Review included</li>
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="mb-8 p-4 bg-slate-50 rounded-xl border border-slate-100">
+                <p class="text-sm font-bold text-slate-900 mb-1 flex items-center gap-2"><i data-lucide="mic-2" class="w-4 h-4 text-blue-500"></i>你的角色：讲师 (Lecturer)</p>
+                <p class="text-xs text-slate-500 leading-relaxed italic">“简历修改是精英陪跑学员的专属，这里我们专注攻克 SQL 难点。”</p>
+              </div>
+              <ul class="space-y-5 mb-10 flex-grow">
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600"><i data-lucide="users" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">1对多 (1-to-Many) 授课</span><p class="text-[11px] text-slate-500">每周1小时核心概念大课 + 统一 Code Review</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600"><i data-lucide="calendar" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">强制学习进度</span><p class="text-[11px] text-slate-500">6周班课强制闭环，拒绝拖延症，适合自律者</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-green-100 p-1 rounded-full text-green-600"><i data-lucide="zap" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">系统的技术沉浸</span><p class="text-[11px] text-slate-500">从 Excel AI 到 SQL 优化，班级氛围共同进步</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-slate-100 p-1 rounded-full text-slate-400"><i data-lucide="x" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-400 font-bold text-[15px]">无私人求职咨询</span><p class="text-[11px] text-slate-400">仅限班群内讨论技术问题，不提供简历面试私教</p></div>
+                </li>
               </ul>
-              <button onclick="openModal()" class="w-full py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-black transition-all">Enrol Now</button>
+              <button onclick="openModal()" class="w-full py-4 bg-[#0a1223] text-white font-bold rounded-xl hover:bg-black transition-all shadow-lg">Reserve Your Spot (报名咨询)</button>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div class="bg-white rounded-3xl border-2 border-orange-500 shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all relative">
-            <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl z-10 uppercase">Most Popular</div>
+          <!-- Card 2: Career Incubator -->
+          <div class="bg-white rounded-3xl border-2 border-orange-500 shadow-2xl overflow-hidden flex flex-col hover:shadow-[0_20px_50px_rgba(249,115,22,0.3)] transition-all relative scale-105 z-10">
+            <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-5 py-2 rounded-bl-xl z-20 uppercase tracking-widest shadow-md">Partner Level</div>
             <div class="p-8 border-b border-slate-100 bg-gradient-to-br from-orange-600 to-red-600 text-white">
-              <h3 class="text-2xl font-bold mb-1">Elite Job-Seeking Mentorship</h3>
-              <p class="text-orange-200 text-sm font-medium uppercase">求职陪跑精英计划</p>
-              <div class="mt-6 flex items-baseline">
-                <span class="text-5xl font-bold">$3500</span>
-                <span class="ml-2 text-orange-200 font-medium">/ Program</span>
+              <div class="inline-block px-3 py-1 bg-white/20 text-white text-[10px] font-bold rounded-full w-fit mb-4 uppercase tracking-widest border border-white/30">Personalized Results</div>
+              <h3 class="text-3xl font-bold mb-1">Career Incubator</h3>
+              <p class="text-orange-100 text-sm font-medium uppercase tracking-wide">求职孵化器精英陪跑计划</p>
+              <div class="mt-8 flex items-baseline">
+                <span class="text-5xl font-bold">$4,980</span>
+                <span class="ml-2 text-orange-100 font-medium uppercase tracking-tighter">Until Hired</span>
               </div>
             </div>
-            <div class="p-8 flex-grow">
-              <ul class="space-y-4 mb-10">
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Resume & LinkedIn Optimization</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Mock Behavioral & Tech Interviews</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Salary Negotiation Coaching</li>
-                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Unlimited 1:1 Support until Hired</li>
+            <div class="p-8 flex-grow flex flex-col">
+              <div class="mb-8 p-4 bg-orange-50 rounded-xl border border-orange-100">
+                <p class="text-sm font-bold text-orange-900 mb-1 flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-orange-600"></i>你的角色：合伙人/导师 (Partner)</p>
+                <p class="text-xs text-orange-700 leading-relaxed italic">“这一周你的进度落后了，晚上跟我开个 1对1 把简历改了。”</p>
+              </div>
+              <ul class="space-y-5 mb-10 flex-grow">
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-orange-100 p-1 rounded-full text-orange-600"><i data-lucide="user-check" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">1对1 (1-on-1) 深度陪伴</span><p class="text-[11px] text-slate-500">每周盯进度，确保你始终跑在正确的求职航道上</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-orange-100 p-1 rounded-full text-orange-600"><i data-lucide="file-edit" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">私下改简历 (Unlimited)</span><p class="text-[11px] text-slate-500">导师亲自上手无限次修改，对简历通过率负责</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-orange-100 p-1 rounded-full text-orange-600"><i data-lucide="message-circle" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">无限次私信权限</span><p class="text-[11px] text-slate-500">24小时优先回复，随时随地解决任何求职突发情况</p></div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <div class="mt-1 bg-orange-100 p-1 rounded-full text-orange-600"><i data-lucide="target" class="w-3 h-3"></i></div>
+                  <div><span class="block text-slate-900 font-bold text-[15px]">结果负责制度</span><p class="text-[11px] text-slate-500">针对特定 JD 进行模拟面试，全方位备战 Offer</p></div>
+                </li>
               </ul>
-              <button onclick="openModal()" class="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">Apply Now</button>
+              <button onclick="openModal()" class="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all shadow-xl">Apply for Mentorship (申请陪跑)</button>
             </div>
           </div>
         </div>
 
-        <!-- 1:1 Services -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Hourly Service 1 -->
-          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
-            <div class="flex items-center justify-between mb-6">
-              <div class="bg-blue-100 p-3 rounded-xl text-blue-600">
-                <i data-lucide="database" class="w-6 h-6"></i>
-              </div>
-              <div class="text-right">
-                <span class="text-2xl font-bold text-slate-900">$250</span>
-                <span class="text-slate-400 text-sm ml-1">/ hour</span>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-2">Data项目辅导 1:1</h3>
-            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-              Personalized technical support for your data projects. Deep dive into SQL, Python, or Power BI logic.
-            </p>
-            <button onclick="openModal()" class="mt-auto py-3 px-6 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-900 hover:text-white transition-all">Book Session</button>
+        <!-- NEW: Comparison Table -->
+        <div class="mt-32">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900">Program Deep Dive</h2>
+            <p class="text-slate-500 mt-2">一分钟看清价值区别</p>
           </div>
-
-          <!-- Hourly Service 2 -->
-          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
-            <div class="flex items-center justify-between mb-6">
-              <div class="bg-orange-100 p-3 rounded-xl text-orange-600">
-                <i data-lucide="briefcase" class="w-6 h-6"></i>
-              </div>
-              <div class="text-right">
-                <span class="text-2xl font-bold text-slate-900">$250</span>
-                <span class="text-slate-400 text-sm ml-1">/ hour</span>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-slate-800 mb-2">求职辅导 1:1</h3>
-            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
-              One-on-one career strategy, resume review, or mock interview session tailored to your specific targets.
-            </p>
-            <button onclick="openModal()" class="mt-auto py-3 px-6 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-900 hover:text-white transition-all">Book Session</button>
+          <div class="overflow-x-auto rounded-3xl border border-slate-200 shadow-lg bg-white">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-900 text-white">
+                  <th class="p-6 font-bold uppercase tracking-widest text-[10px]">功能对比</th>
+                  <th class="p-6 font-bold text-center border-l border-white/10">Live Bootcamp ($1,999)</th>
+                  <th class="p-6 font-bold text-center border-l border-white/10 text-orange-400">Career Incubator ($4,980)</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm">
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">服务形式</td>
+                  <td class="p-6 text-center text-slate-600 font-medium">6-Week Cohort (6周班课)</td>
+                  <td class="p-6 text-center text-slate-900 font-bold italic">Unlimited Until Hired (保Offer陪跑)</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">导师投入时间</td>
+                  <td class="p-6 text-center text-slate-600">每周1次 集体直播课</td>
+                  <td class="p-6 text-center text-slate-900 font-bold">每周 1对1 深度私教复盘</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">Data硬核技能</td>
+                  <td class="p-6 text-center text-slate-600 font-medium">✅ 讲师亲自直播教学</td>
+                  <td class="p-6 text-center text-slate-900 font-bold">✅ 直接赠送左侧全部课程</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">简历修改</td>
+                  <td class="p-6 text-center text-slate-400">❌ 仅提供通用标准模板</td>
+                  <td class="p-6 text-center text-slate-900 font-bold italic">✅ 导师亲自上手无限次修改</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">模拟面试</td>
+                  <td class="p-6 text-center text-slate-400">❌ 无</td>
+                  <td class="p-6 text-center text-slate-900 font-bold">✅ 针对具体 JD 逐条压力模拟</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-700">私信答疑</td>
+                  <td class="p-6 text-center text-slate-600">❌ 仅限班群内技术讨论</td>
+                  <td class="p-6 text-center text-slate-900 font-bold">✅ 24小时优先私信及策略回复</td>
+                </tr>
+                <tr class="comparison-row">
+                  <td class="p-6 font-bold text-slate-900 text-[15px]">适合人群</td>
+                  <td class="p-6 text-center text-slate-500 font-medium">想学技术、自律性强、预算有限</td>
+                  <td class="p-6 text-center text-orange-600 font-bold">必须拿Offer、要转行、需要强力背书</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- FAQ or Guarantee -->
+        <!-- Help Section -->
         <div class="mt-20 text-center bg-slate-50 rounded-3xl p-12 border border-slate-200">
-          <h2 class="text-2xl font-bold text-slate-900 mb-4">Questions about our pricing?</h2>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Unsure where you stand?</h2>
           <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
-            We offer flexible payment plans for our full programs. Book a free 15-minute consultation to discuss which plan fits your career goals best.
+            Book a free 15-minute diagnostic call. We'll audit your profile and tell you exactly which program fits your current career goals.
           </p>
-          <button onclick="openModal()" class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-full hover:border-orange-500 hover:text-orange-600 transition-all">
-            Schedule a Free Consultation <i data-lucide="calendar" class="w-5 h-5"></i>
+          <button onclick="openModal()" class="inline-flex items-center gap-2 px-10 py-4 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-full hover:border-orange-500 hover:text-orange-600 transition-all shadow-sm">
+            Book My Diagnostic Call <i data-lucide="calendar" class="w-5 h-5"></i>
           </button>
         </div>
       </div>
@@ -186,20 +242,18 @@
 
     <!-- Footer -->
     <footer class="bg-brand-900 border-t border-white/10 py-12">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-center text-blue-300 text-sm">
-          <div class="flex items-center gap-2 mb-4 md:mb-0">
-            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-brand-900 font-bold text-xs">B</div>
-            <span class="text-white font-bold">Break Into Data</span>
-          </div>
-          <div class="flex gap-8 mb-4 md:mb-0">
-            <a href="index.html" class="hover:text-white transition-colors">Home</a>
-            <a href="pricing.html" class="text-white font-bold">Pricing</a>
-            <a href="#" class="hover:text-white transition-colors">Privacy</a>
-            <a href="#" class="hover:text-white transition-colors">Terms</a>
-          </div>
-          <div>&copy; <span id="year"></span> Break Into Data. All rights reserved.</div>
+      <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-blue-300 text-sm">
+        <div class="flex items-center gap-2 mb-4 md:mb-0">
+          <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-brand-900 font-bold text-xs">B</div>
+          <span class="text-white font-bold">Break Into Data</span>
         </div>
+        <div class="flex gap-8 mb-4 md:mb-0">
+          <a href="index.html" class="hover:text-white transition-colors">Home</a>
+          <a href="pricing.html" class="text-white font-bold">Pricing</a>
+          <a href="#" class="hover:text-white transition-colors">Privacy</a>
+          <a href="#" class="hover:text-white transition-colors">Terms</a>
+        </div>
+        <div>&copy; <span id="year"></span> Break Into Data. All rights reserved.</div>
       </div>
     </footer>
 
@@ -220,10 +274,8 @@
     <script>
       lucide.createIcons();
       document.getElementById('year').textContent = new Date().getFullYear();
-
       const mobileMenu = document.getElementById('mobile-menu');
       function toggleMobileMenu() { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); }
-
       const modal = document.getElementById('calendly-modal');
       function openModal() { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
       function closeModal() { modal.classList.add('hidden'); document.body.style.overflow = ''; }
