@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing - Break Into Data</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#fefce8',
+                100: '#fff7ed', // Cream/Beige background
+                500: '#f97316', // Orange Accent
+                600: '#ea580c',
+                900: '#1e3a8a', // Deep Blue
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Calendly -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+      body {
+        font-family: 'Inter', 'Noto Sans SC', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-100 text-slate-800 antialiased relative">
+    
+    <!-- Header -->
+    <header id="main-header" class="fixed w-full z-50 bg-white/95 backdrop-blur-md shadow-sm py-3 transition-all duration-300">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white font-bold text-lg">B</div>
+          <span class="font-bold text-xl tracking-tight text-slate-900">Break Into Data</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors">Home</a>
+          <a href="pricing.html" class="text-sm font-bold text-slate-900 border-b-2 border-orange-500 transition-colors">Pricing</a>
+          <button 
+            onclick="openModal()"
+            class="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-transform transform hover:scale-105"
+          >
+            Book a Call
+          </button>
+        </nav>
+
+        <!-- Mobile Toggle -->
+        <button class="md:hidden text-slate-900" onclick="toggleMobileMenu()">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-lg p-6 flex-col gap-4 border-t">
+        <a href="index.html" class="text-lg font-bold text-slate-900 py-2 border-b border-slate-100">Home</a>
+        <a href="pricing.html" class="text-lg font-bold text-orange-600 py-2 border-b border-slate-100">Pricing</a>
+        <button 
+          onclick="openModal(); toggleMobileMenu()"
+          class="bg-slate-900 text-white w-full py-3 rounded-lg font-bold"
+        >
+          Book a Call
+        </button>
+      </div>
+    </header>
+
+    <main class="pt-32 pb-24">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Invest in Your Career</h1>
+          <p class="text-xl text-slate-600 font-medium">为你的职业生涯投资 — 透明、公平的价格体系</p>
+        </div>
+
+        <!-- Main Programs -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all group">
+            <div class="p-8 border-b border-slate-100 bg-slate-900 text-white">
+              <h3 class="text-2xl font-bold mb-1">AI + Data Analytics Bootcamp</h3>
+              <p class="text-blue-300 text-sm font-medium uppercase">AI + 数据分析全栈特训营</p>
+              <div class="mt-6 flex items-baseline">
+                <span class="text-5xl font-bold">$3500</span>
+                <span class="ml-2 text-slate-400 font-medium">/ Program</span>
+              </div>
+            </div>
+            <div class="p-8 flex-grow">
+              <ul class="space-y-4 mb-10">
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> 6 Comprehensive Modules</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> AI-Integrated Curriculum</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Hands-on Capstone Projects</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Portfolio Review included</li>
+              </ul>
+              <button onclick="openModal()" class="w-full py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-black transition-all">Enrol Now</button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-3xl border-2 border-orange-500 shadow-xl overflow-hidden flex flex-col hover:shadow-2xl transition-all relative">
+            <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl z-10 uppercase">Most Popular</div>
+            <div class="p-8 border-b border-slate-100 bg-gradient-to-br from-orange-600 to-red-600 text-white">
+              <h3 class="text-2xl font-bold mb-1">Elite Job-Seeking Mentorship</h3>
+              <p class="text-orange-200 text-sm font-medium uppercase">求职陪跑精英计划</p>
+              <div class="mt-6 flex items-baseline">
+                <span class="text-5xl font-bold">$3500</span>
+                <span class="ml-2 text-orange-200 font-medium">/ Program</span>
+              </div>
+            </div>
+            <div class="p-8 flex-grow">
+              <ul class="space-y-4 mb-10">
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Resume & LinkedIn Optimization</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Mock Behavioral & Tech Interviews</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Salary Negotiation Coaching</li>
+                <li class="flex items-center gap-3 text-slate-600"><i data-lucide="check-circle-2" class="w-5 h-5 text-green-500"></i> Unlimited 1:1 Support until Hired</li>
+              </ul>
+              <button onclick="openModal()" class="w-full py-4 bg-orange-600 text-white font-bold rounded-xl hover:bg-orange-700 transition-all">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1:1 Services -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Hourly Service 1 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <div class="bg-blue-100 p-3 rounded-xl text-blue-600">
+                <i data-lucide="database" class="w-6 h-6"></i>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-slate-900">$250</span>
+                <span class="text-slate-400 text-sm ml-1">/ hour</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-2">Data项目辅导 1:1</h3>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+              Personalized technical support for your data projects. Deep dive into SQL, Python, or Power BI logic.
+            </p>
+            <button onclick="openModal()" class="mt-auto py-3 px-6 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-900 hover:text-white transition-all">Book Session</button>
+          </div>
+
+          <!-- Hourly Service 2 -->
+          <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <div class="bg-orange-100 p-3 rounded-xl text-orange-600">
+                <i data-lucide="briefcase" class="w-6 h-6"></i>
+              </div>
+              <div class="text-right">
+                <span class="text-2xl font-bold text-slate-900">$250</span>
+                <span class="text-slate-400 text-sm ml-1">/ hour</span>
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-slate-800 mb-2">求职辅导 1:1</h3>
+            <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+              One-on-one career strategy, resume review, or mock interview session tailored to your specific targets.
+            </p>
+            <button onclick="openModal()" class="mt-auto py-3 px-6 border-2 border-slate-900 text-slate-900 font-bold rounded-xl hover:bg-slate-900 hover:text-white transition-all">Book Session</button>
+          </div>
+        </div>
+
+        <!-- FAQ or Guarantee -->
+        <div class="mt-20 text-center bg-slate-50 rounded-3xl p-12 border border-slate-200">
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Questions about our pricing?</h2>
+          <p class="text-slate-600 mb-8 max-w-2xl mx-auto">
+            We offer flexible payment plans for our full programs. Book a free 15-minute consultation to discuss which plan fits your career goals best.
+          </p>
+          <button onclick="openModal()" class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-slate-200 text-slate-800 font-bold rounded-full hover:border-orange-500 hover:text-orange-600 transition-all">
+            Schedule a Free Consultation <i data-lucide="calendar" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-900 border-t border-white/10 py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center text-blue-300 text-sm">
+          <div class="flex items-center gap-2 mb-4 md:mb-0">
+            <div class="w-6 h-6 bg-white rounded-full flex items-center justify-center text-brand-900 font-bold text-xs">B</div>
+            <span class="text-white font-bold">Break Into Data</span>
+          </div>
+          <div class="flex gap-8 mb-4 md:mb-0">
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
+            <a href="pricing.html" class="text-white font-bold">Pricing</a>
+            <a href="#" class="hover:text-white transition-colors">Privacy</a>
+            <a href="#" class="hover:text-white transition-colors">Terms</a>
+          </div>
+          <div>&copy; <span id="year"></span> Break Into Data. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div id="calendly-modal" class="hidden fixed inset-0 z-[60] flex items-center justify-center p-4">
+      <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeModal()"></div>
+      <div class="relative bg-white w-full max-w-4xl h-[85vh] rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+        <div class="flex justify-between items-center p-4 border-b">
+          <h3 class="text-lg font-bold text-slate-800">Book Your Career Strategy Call</h3>
+          <button onclick="closeModal()" class="p-2 hover:bg-slate-100 rounded-full text-slate-500"><i data-lucide="x"></i></button>
+        </div>
+        <div class="flex-grow bg-slate-50 relative">
+          <div class="calendly-inline-widget w-full h-full" data-url="https://calendly.com/breakintodata-ca/30min" style="min-width: 320px; height: 100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      lucide.createIcons();
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      const mobileMenu = document.getElementById('mobile-menu');
+      function toggleMobileMenu() { mobileMenu.classList.toggle('hidden'); mobileMenu.classList.toggle('flex'); }
+
+      const modal = document.getElementById('calendly-modal');
+      function openModal() { modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+      function closeModal() { modal.classList.add('hidden'); document.body.style.overflow = ''; }
+    </script>
+  </body>
+</html>
